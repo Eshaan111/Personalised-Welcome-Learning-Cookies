@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Welcome</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-theme"> <div class="container">
+        <header>
+            <h1 id="greeting">Hello, Guest!</h1>
+            <p id="subtext">Please tell us your preferences so we can remember you.</p>
+        </header>
+
+        <main>
+            <form action="/set-preferences" method="POST" id="prefs-form">
+                <div class="form-group">
+                    <label for="name">What is your name?</label>
+                    <input type="text" id="name" name="name" placeholder="Enter name..." required>
+                </div>
+
+                <div class="form-group">
+                    <label>Choose a Theme:</label>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="theme" value="light" checked> Light
+                        </label>
+                        <label>
+                            <input type="radio" name="theme" value="dark"> Dark
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit">Save My Preferences</button>
+            </form>
+
+            <form action="/forget" method="POST" id="forget-form" style="display:none;">
+                <button type="submit" class="secondary-btn">Forget Me</button>
+            </form>
+        </main>
+    </div>
+    <script src='app.js'></script>
+</body>
+</html>
