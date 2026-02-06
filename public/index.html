@@ -6,14 +6,15 @@
     <title>Cookie Welcome</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="light-theme"> <div class="container">
+<body class="light-theme">
+    <div class="container">
         <header>
             <h1 id="greeting">Hello, Guest!</h1>
             <p id="subtext">Please tell us your preferences so we can remember you.</p>
         </header>
 
         <main>
-            <form action="/set-preferences" method="POST" id="prefs-form">
+            <div id="prefs-container">
                 <div class="form-group">
                     <label for="name">What is your name?</label>
                     <input type="text" id="name" name="name" placeholder="Enter name..." required>
@@ -31,12 +32,12 @@
                     </div>
                 </div>
 
-                <button type="submit">Save My Preferences</button>
-            </form>
+                <button type="button" onclick="savePreferences()">Save My Preferences</button>
+            </div>
 
-            <form action="/forget" method="POST" id="forget-form" style="display:none;">
-                <button type="submit" class="secondary-btn">Forget Me</button>
-            </form>
+            <div id="forget-container" style="display:none;">
+                <button type="button" class="secondary-btn" onclick="forgetMe()">Forget Me</button>
+            </div>
         </main>
     </div>
     <script src='app.js'></script>
